@@ -4,12 +4,10 @@ import './post-list.css';
 
 const PostList = ({posts, onDelete, onToggleImportant, onToggleLiked}) => {
 
-    const filterPosts = posts.filter(item =>
-        item.label &&
-        typeof (item) == 'object');
+
 
                                 
-    const elements = filterPosts.map((item) => {
+    const elements = posts.map((item) => {
         const {id, ...itemProps} = item;
         return (
             <li key={id} className="list-group-item">
